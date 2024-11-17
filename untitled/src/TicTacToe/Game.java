@@ -19,10 +19,13 @@ public class Game {
        board.printBoard();
         while(true) {
             System.out.println("Player 1's turn");
-            boolean player1placed;
+            boolean player1placed=false;
             do {
                 int row1 = scanner.nextInt();
                 int col1 = scanner.nextInt();
+                if(row1>2||col1>2){
+                    continue;
+                }
                 player1placed = board.setBoard(row1, col1, player1);
             } while (!player1placed);
             board.printBoard();
@@ -35,10 +38,13 @@ public class Game {
                 break;
             }
             System.out.println("Player 2's turn");
-            boolean player2placed;
+            boolean player2placed=false;
             do{
                 int row1 = scanner.nextInt();
                 int col1 = scanner.nextInt();
+                if(row1>2||col1>2){
+                    continue;
+                }
                 player2placed=board.setBoard(row1,col1,player2);
             }while(!player2placed);
             board.printBoard();
